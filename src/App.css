@@ -1,0 +1,121 @@
+:root {
+  --w: #fff;
+	--akcenr: #00f598;
+	--red: #ff6868;
+
+  --font-family: "Gilroy", sans-serif;
+  --second-family: "Roboto", sans-serif;
+}
+
+Body {
+  font-size: 14px;
+  font-family: "Gilroy", sans-serif;
+}
+
+* {box-sizing: border-box;}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+
+  background: linear-gradient(to bottom,
+    #2C2F3D 0%,
+    #141C22 100%
+  );
+
+  display: flex;
+  flex-direction: column;
+}
+.App > * {
+  flex: 0 0 auto;
+}
+
+.app-header {
+  width: 100%;
+  height: 60px;
+  background-color: #d1d1d1;
+
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic;
+
+  display: flex;
+  align-items: center;
+}
+
+/* .ScreenContent {} */
+.MelodyScreen {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-list-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.play-list-title__inscription {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+.play-list-title__name {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+}
+
+
+
+.melody-image-displayer {
+  margin: 20px;
+
+  width: 100%;
+  height: 300px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+.melody-disk, .melody-disk-blur {
+ position: absolute;
+ object-fit: cover;
+}
+.melody-disk {
+  -webkit-mask-image: radial-gradient(circle at center, transparent 12%, black 12%);
+  mask-image: radial-gradient(circle at center, transparent 12%, black 12%);
+  
+  transform: rotateZ(15deg);
+}
+.melody-disk-blur {
+  border-radius: 100%;
+  filter: blur(75px);
+  opacity: 0.25;
+}
+
+
+.melody-player-menu {
+  padding: 20px 25px 0 25px;
+  width: 100%;
+  min-height: 100px;
+  z-index: 1;
+}
+
+.melody-title {
+  display: flex;
+  flex-direction: column  ;
+}
+.melody-name {
+  color: var(--w);
+  font-weight: 700;
+  font-size: 20px;
+}
+.melody-author {
+  font-size: 16px;
+  font-weight: 400;
+  color: #70799f;
+}
