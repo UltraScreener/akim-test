@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useCallback, useState } from "react";
 
 const PlayButton = () => {
     const [play, setPlay] = useState(false)
-    
+
     const [data, setData] = useState({})
 
-    useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(async response => {
+    const fetchRequest = useCallback(async () => {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
         setData(await response.json())
-    })
     }, [])
+
 
 
     const onClick = (e) => {
@@ -18,6 +17,8 @@ const PlayButton = () => {
 
         console.log(play)
         setPlay(!play)
+
+        fetchRequest()
     }
     
     return (
