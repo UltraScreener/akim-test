@@ -10,7 +10,11 @@ const PlayButton = () => {
         setData(await response.json())
     }, [])
 
-
+    useEffect(() => {
+        if(play === true){
+            fetchRequest()
+        }
+    }, [play])
 
     const onClick = (e) => {
         e.stopPropagation()
@@ -18,11 +22,12 @@ const PlayButton = () => {
         console.log(play)
         setPlay(!play)
 
-        fetchRequest()
+        
     }
     
     return (
         <>
+        <div style={{color: '#fff'}}>statusPlay: {play ? '1' : '0'}</div>
         <div style={{color: '#fff'}}>responseTitle: {data.title}</div>
         <button type="button" onClick={onClick}>
             Image
