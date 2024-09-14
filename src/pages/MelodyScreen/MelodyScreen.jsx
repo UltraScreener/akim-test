@@ -9,7 +9,7 @@ const MelodyScreen = () => {
         <>
             <div className="MelodyScreen ScreenContent">
                 <MelodyPlayListTitle playListName={'Летний день на даче'} />
-                <MelodyImageDisplayer imagePath={"../../assets/images/melody-image.png"} />
+                <MelodyImageDisplayer imageFileName={'melody-image.png'} />
                 <MelodyPlayerMenu />
             </div>
 
